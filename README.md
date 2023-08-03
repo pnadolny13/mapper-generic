@@ -58,6 +58,16 @@ Currently the mapper expects a `Mapper` class in the script and allows you to ov
 
 Usually `map_state_message` and `map_activate_version_message` shouldn't need to be overridden and `map_schema_message` should only be, and is required to be, overridden if the records structure is changed i.e. a property is added, removed, renamed.
 
+### Additional Dependencies
+
+If you're running this mapper with Meltano you can add additional dependencies to the `pip_url` so that they're accessible to your mapper script.
+
+```
+  - name: mapper-generic
+    namespace: mapper_generic
+    pip_url: git+https://github.com/pnadolny13/mapper-generic.git <MY_EXTRA_DEPENDENCY>
+```
+
 ### Accepted Config Options
 
 A full list of supported settings and capabilities for this
